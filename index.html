@@ -8,29 +8,26 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
-      background: linear-gradient(180deg, #ff9ff3, #48dbfb, #5f27cd);
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle, #120028, #000);
       color: white;
       text-align: center;
-      overflow-x: hidden;
     }
 
     img {
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       margin: 0 auto;
       display: block;
-      animation: zoomIn 1.2s ease;
     }
 
-    .contenedor {
+    .contenido {
       padding: 20px;
-      animation: fadeUp 1.5s ease;
     }
 
     h1, h2 {
-      color: #fff;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      color: #ff7cff;
+      text-shadow: 0 0 10px #ff7cff;
     }
 
     p {
@@ -38,128 +35,96 @@
       line-height: 1.6;
     }
 
-    .frase {
-      font-style: italic;
-      color: #fff6ff;
-    }
-
     .boton {
       display: inline-block;
       margin-top: 15px;
-      padding: 14px 28px;
-      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffeaa7);
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
       color: #000;
       font-weight: bold;
-      border-radius: 40px;
+      border-radius: 30px;
       text-decoration: none;
-      box-shadow: 0 0 20px #fff;
-      animation: pulse 2s infinite;
+      box-shadow: 0 0 15px #ff7cff;
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
     }
 
     audio {
       width: 90%;
-      margin: 15px auto;
-      border-radius: 20px;
+      margin: 20px auto;
     }
 
-    /* Animaciones */
-    @keyframes zoomIn {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes fadeUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-
-    /* Efecto estrellas */
-    .estrellas {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.imgur.com/9a4QKQy.png');
-      opacity: 0.3;
-      z-index: -1;
-      animation: estrellas 60s linear infinite;
-    }
-
-    @keyframes estrellas {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 2000px; }
+    .frase {
+      font-style: italic;
+      color: #ffd1ff;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="estrellas"></div>
-
   <!-- MÚSICA -->
   <audio autoplay loop controls>
     <source src="cancion kpop.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
   </audio>
 
-  <!-- PORTADA -->
+  <!-- IMAGEN PORTADA -->
   <img src="portada valeria.jpg" alt="Portada Valeria">
 
-  <div class="contenedor">
-    <h1>🎉 ¡Estás invitado! 🎉</h1>
+  <div class="contenido">
+    <h1>¡Estás invitado!</h1>
     <p>
-      Nuestra pequeña estrella está de cumpleaños  
-      y queremos celebrarlo contigo 💖
+      Acompáñanos a celebrar el cumpleaños de nuestra pequeña guerrera 💖  
     </p>
 
-    <h2>✨ Valeria cumple 4 años ✨</h2>
+    <h2>🎉 Valeria cumple 4 años 🎉</h2>
 
     <p class="frase">
-      Valeria es valiente, divertida y llena de magia 🌈  
-      Le encanta cantar, soñar y brillar como una estrella K-Pop ⭐
+      Valeria es valiente, alegre, creativa y llena de magia.  
+      Le encanta brillar, cantar, soñar y compartir sonrisas ✨  
     </p>
 
     <p>
-      Habrá juegos, música, sorpresas  
-      y mucha diversión 🥳🎶
+      Será una fiesta llena de color, música y diversión.  
+      ¡No faltes a esta aventura especial! 💫
     </p>
   </div>
 
-  <!-- UBICACIÓN -->
+  <!-- IMAGEN UBICACIÓN -->
   <img src="valeria ubicacion.png" alt="Ubicación">
 
-  <div class="contenedor">
+  <div class="contenido">
     <h2>📍 Datos del evento</h2>
 
     <p><strong>📅 Día:</strong> Jueves 15</p>
     <p><strong>⏰ Hora:</strong> 5:00 PM</p>
     <p><strong>🏠 Dirección:</strong> Jr. Lima 493, La Esperanza</p>
 
-    <a class="boton"
-       href="https://maps.app.goo.gl/cbYyWKrberVmtnNr5"
+    <a class="boton" 
+       href="https://maps.app.goo.gl/qCei5TYZtHeDPjry5" 
        target="_blank">
-       Ver ubicación en Google Maps 📍
+       Ver ubicación en Google Maps
     </a>
   </div>
 
   <!-- IMAGEN FINAL -->
   <img src="valeria fin.png" alt="Valeria Final">
 
-  <div class="contenedor">
-    <h2>💜 ¡Te esperamos! 💜</h2>
+  <div class="contenido">
+    <h2>💜 Te esperamos 💜</h2>
 
     <p>
       Ven a celebrar con nosotros  
-      el cumpleaños de nuestra guerrera Valeria ⚔️👑
+      y a compartir un momento inolvidable  
+      con nuestra estrella Valeria ⭐
     </p>
 
     <p class="frase">
-      “Las princesas también son fuertes,  
-      valientes y brillan con su propia luz.” ✨
+      “Las princesas también son guerreras…  
+      y Valeria es la más valiente de todas.” 👑⚔️
     </p>
   </div>
 
