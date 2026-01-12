@@ -1,132 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cumpleaños de Valeria</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Cumpleaños de Valeria</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: radial-gradient(circle, #120028, #000);
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+  background: linear-gradient(180deg, #ffe6f7, #e0f7ff, #f3e5ff);
+  color: #5a007a;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    img {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      display: block;
-    }
+img {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 20px;
+  animation: zoom 1.2s ease;
+}
 
-    .contenido {
-      padding: 20px;
-    }
+.section {
+  padding: 20px;
+  animation: fadeUp 1.5s ease;
+}
 
-    h1, h2 {
-      color: #ff7cff;
-      text-shadow: 0 0 10px #ff7cff;
-    }
+h1, h2 {
+  color: #ff4fd8;
+  text-shadow: 0 0 10px #ffd1f2;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.boton {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff7ad9, #6ee7ff);
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ffb3ff;
+  animation: pulse 2s infinite;
+}
 
-    .boton {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
-      color: #000;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 0 15px #ff7cff;
-    }
+audio {
+  width: 90%;
+  margin: 15px auto;
+  border-radius: 20px;
+}
 
-    .boton:hover {
-      transform: scale(1.05);
-    }
+/* Animaciones */
+@keyframes zoom {
+  from {transform: scale(0.7); opacity:0;}
+  to {transform: scale(1); opacity:1;}
+}
 
-    audio {
-      width: 90%;
-      margin: 20px auto;
-    }
+@keyframes fadeUp {
+  from {transform: translateY(40px); opacity:0;}
+  to {transform: translateY(0); opacity:1;}
+}
 
-    .frase {
-      font-style: italic;
-      color: #ffd1ff;
-    }
-  </style>
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+/* Confeti */
+.confeti {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url("https://i.imgur.com/3Z6M4Z5.png");
+  animation: confeti 30s linear infinite;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes confeti {
+  from {background-position: 0 0;}
+  to {background-position: 0 2000px;}
+}
+
+/* Personajes flotantes */
+.personaje {
+  position: fixed;
+  width: 120px;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+.p1 { left: 5px; top: 120px; }
+.p2 { right: 5px; top: 300px; }
+
+@keyframes flotar {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Cuenta regresiva */
+#contador {
+  font-size: 22px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 0 15px #ffc6ff;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- MÚSICA -->
-  <audio autoplay loop controls>
-    <source src="cancion kpop.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-  </audio>
+<div class="confeti"></div>
 
-  <!-- IMAGEN PORTADA -->
-  <img src="portada valeria.jpg" alt="Portada Valeria">
+<img src="valeria 1.png" class="personaje p1">
+<img src="valeria 2.png" class="personaje p2">
 
-  <div class="contenido">
-    <h1>¡Estás invitado!</h1>
-    <p>
-      Acompáñanos a celebrar el cumpleaños de nuestra pequeña guerrera 💖  
-    </p>
+<audio autoplay loop controls>
+  <source src="cancion kpop.mp3" type="audio/mpeg">
+</audio>
 
-    <h2>🎉 Valeria cumple 4 años 🎉</h2>
+<img src="portada valeria.jpg">
 
-    <p class="frase">
-      Valeria es valiente, alegre, creativa y llena de magia.  
-      Le encanta brillar, cantar, soñar y compartir sonrisas ✨  
-    </p>
+<div class="section">
+  <h1>🎉 ¡Estás invitado! 🎉</h1>
+  <h2>Valeria cumple 4 años ✨</h2>
+  <p>Una pequeña estrella llena de alegría, dulzura y magia 💖</p>
+</div>
 
-    <p>
-      Será una fiesta llena de color, música y diversión.  
-      ¡No faltes a esta aventura especial! 💫
-    </p>
-  </div>
+<!-- CUENTA REGRESIVA -->
+<div class="section">
+  <h2>⏳ Cuenta regresiva</h2>
+  <div id="contador"></div>
+</div>
 
-  <!-- IMAGEN UBICACIÓN -->
-  <img src="valeria ubicacion.png" alt="Ubicación">
+<!-- GALERÍA -->
+<img src="valeria 1.png">
+<img src="valeria 2.png">
+<img src="valeria 3.png">
+<img src="valeria 4.png">
 
-  <div class="contenido">
-    <h2>📍 Datos del evento</h2>
+<div class="section">
+  <h2>📅 Datos del evento</h2>
+  <p>Jueves 15</p>
+  <p>5:00 PM</p>
+  <p>Jr. Lima 493, La Esperanza</p>
 
-    <p><strong>📅 Día:</strong> Jueves 15</p>
-    <p><strong>⏰ Hora:</strong> 5:00 PM</p>
-    <p><strong>🏠 Dirección:</strong> Jr. Lima 493, La Esperanza</p>
+  <a class="boton" href="https://maps.app.goo.gl/cbYyWKrberVmtnNr5" target="_blank">
+    Ver ubicación 📍
+  </a>
+</div>
 
-    <a class="boton" 
-       href="https://maps.app.goo.gl/qCei5TYZtHeDPjry5" 
-       target="_blank">
-       Ver ubicación en Google Maps
-    </a>
-  </div>
+<img src="valeria ubicacion.png">
 
-  <!-- IMAGEN FINAL -->
-  <img src="valeria fin.png" alt="Valeria Final">
+<img src="valeria fin.png">
 
-  <div class="contenido">
-    <h2>💜 Te esperamos 💜</h2>
+<div class="section">
+  <h2>💜 ¡Te esperamos! 💜</h2>
+  <p>Ven a celebrar con Valeria y vive una tarde mágica ✨</p>
+</div>
 
-    <p>
-      Ven a celebrar con nosotros  
-      y a compartir un momento inolvidable  
-      con nuestra estrella Valeria ⭐
-    </p>
+<script>
+const fecha = new Date("2026-01-15T17:00:00").getTime();
 
-    <p class="frase">
-      “Las princesas también son guerreras…  
-      y Valeria es la más valiente de todas.” 👑⚔️
-    </p>
-  </div>
+setInterval(() => {
+  const ahora = new Date().getTime();
+  const distancia = fecha - ahora;
+
+  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000*60*60));
+  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000*60));
+  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+  document.getElementById("contador").innerHTML =
+    `🎂 Faltan ${dias} días, ${horas}h, ${minutos}m, ${segundos}s 🎉`;
+}, 1000);
+</script>
 
 </body>
 </html>
